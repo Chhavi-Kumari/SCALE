@@ -2,28 +2,31 @@ import Link from "next/link";
 
 import { Footer } from "@/components/Footer";
 import { PageHero } from "@/components/PageHero";
+import { EquipmentCarousel } from "@/components/EquipmentCarousel";
+import { SectionContainer } from "@/components/SectionContainer";
+import {
+  roboticsEquipment,
+  electronicsEquipment,
+  kitsEquipment
+} from "@/components/equipmentShowcaseData";
+
 
 const equipmentItems = [
   {
-    title: "Sensor Kits",
-    description: "Portable kits for data collection, observation, and analysis.",
-    link: "/equipment/explore/#sensor-kits"
+    title: "Electronics",
+    description: "Access laptops, tablets, and 3D printers that support coding, design, modeling, and hands-on prototyping.",
+    link: "#electronics"
   },
   {
     title: "Robotics Sets",
     description: "Introductory robotics systems for classroom or club settings.",
-    link: "/equipment/explore/#robotics"
+    link: "#robotics"
   },
   {
-    title: "Measurement Tools",
+    title: "Kits",
     description: "Reliable tools for experiments, labs, and student investigations.",
-    link: "/equipment/explore/#robotics"
+    link: "#kits"
   },
-  {
-    title: "Maker Supplies",
-    description: "General prototyping materials for engineering design activities.",
-    link: "/equipment/explore/#robotics"
-  }
 ];
 
 export default function EquipmentPage() {
@@ -46,7 +49,7 @@ export default function EquipmentPage() {
             </h2>
             <p className="mt-5 max-w-6xl text-lg leading-8 text-stone-600">
               <a
-                href="https://vk12cosmic.org/"
+                href="https://vk12cosmic.myturn.com/library/inventory/browse"
                 className="font-semibold text-gold transition hover:text-cardinal"
               >
                 COSMIC-System
@@ -77,7 +80,7 @@ export default function EquipmentPage() {
       </section>
 
       <section className="py-5">
-        <div className="section-shell grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="section-shell grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {equipmentItems.map((item) => (
             <article key={item.title} className="surface-card p-6">
               <h2 className="font-display text-2xl text-ink">{item.title}</h2>
@@ -95,6 +98,33 @@ export default function EquipmentPage() {
           ))}
         </div>
       </section>
+
+      <SectionContainer
+        id="robotics"
+        eyebrow="Robotics"
+        heading="Robotics equipment showcase"
+        description="Compact robotics tools for classroom engineering and prototyping."
+      >
+        <EquipmentCarousel items={roboticsEquipment} />
+      </SectionContainer>
+
+      <SectionContainer
+        id="electronics"
+        eyebrow="Electronics"
+        heading="Devices and digital fabrication tools"
+        description="Access laptops, tablets, and 3D printers that support coding, design, modeling, and hands-on prototyping."
+      >
+        <EquipmentCarousel items={electronicsEquipment} />
+      </SectionContainer>
+
+      <SectionContainer
+        id="kits"
+        eyebrow="Kits"
+        heading="Measurement kits for lab precision"
+        description="Reliable measurement tools for repeatable classroom lab work."
+      >
+        <EquipmentCarousel items={kitsEquipment} />
+      </SectionContainer>
 
       <Footer />
     </main>

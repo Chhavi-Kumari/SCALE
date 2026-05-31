@@ -3,9 +3,9 @@ import { PageHero } from "@/components/PageHero";
 import { EquipmentCarousel } from "@/components/EquipmentCarousel";
 import { SectionContainer } from "@/components/SectionContainer";
 import {
-  measurementKitsEquipment,
   roboticsEquipment,
-  sensorKitsEquipment
+  electronicsEquipment,
+  kitsEquipment
 } from "@/components/equipmentShowcaseData";
 
 export default function EquipmentExplorePage() {
@@ -14,7 +14,7 @@ export default function EquipmentExplorePage() {
       <PageHero
         eyebrow="Equipment Explore"
         title="Explore the STEM equipment catalog"
-        description="Browse the inventory used to support classrooms, clubs, and partner programs. This page keeps the same USC Viterbi visual language while focusing on equipment discovery and lending support."
+        description="Browse the inventory used to support classrooms, clubs, and partner programs."
         primaryCta={{ label: "Request Access", href: "/login" }}
         secondaryCta={{ label: "Back to Equipment", href: "/equipment" }}
       />
@@ -29,21 +29,21 @@ export default function EquipmentExplorePage() {
       </SectionContainer>
 
       <SectionContainer
-        id="sensor-kits"
-        eyebrow="Sensor Kits"
-        heading="Sensor kits for data collection"
-        description="Portable sensing tools for hands-on investigations and data capture."
+        id="electronics"
+        eyebrow="Electronics"
+        heading="Devices and digital fabrication tools"
+        description="Access laptops, tablets, and 3D printers that support coding, design, modeling, and hands-on prototyping."
       >
-        <EquipmentCarousel items={sensorKitsEquipment} />
+        <EquipmentCarousel items={electronicsEquipment} />
       </SectionContainer>
 
       <SectionContainer
-        id="measurement-kits"
-        eyebrow="Measurement Kits"
+        id="kits"
+        eyebrow="Kits"
         heading="Measurement kits for lab precision"
         description="Reliable measurement tools for repeatable classroom lab work."
       >
-        <EquipmentCarousel items={measurementKitsEquipment} />
+        <EquipmentCarousel items={kitsEquipment} />
       </SectionContainer>
 
       <Footer />
