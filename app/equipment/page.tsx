@@ -6,19 +6,23 @@ import { PageHero } from "@/components/PageHero";
 const equipmentItems = [
   {
     title: "Sensor Kits",
-    description: "Portable kits for data collection, observation, and analysis."
+    description: "Portable kits for data collection, observation, and analysis.",
+    link: "/equipment/explore/#sensor-kits"
   },
   {
     title: "Robotics Sets",
-    description: "Introductory robotics systems for classroom or club settings."
+    description: "Introductory robotics systems for classroom or club settings.",
+    link: "/equipment/explore/#robotics"
   },
   {
     title: "Measurement Tools",
-    description: "Reliable tools for experiments, labs, and student investigations."
+    description: "Reliable tools for experiments, labs, and student investigations.",
+    link: "/equipment/explore/#robotics"
   },
   {
     title: "Maker Supplies",
-    description: "General prototyping materials for engineering design activities."
+    description: "General prototyping materials for engineering design activities.",
+    link: "/equipment/explore/#robotics"
   }
 ];
 
@@ -80,12 +84,13 @@ export default function EquipmentPage() {
               <p className="mt-3 text-sm leading-7 text-stone-600">
                 {item.description}
               </p>
-              <a
-                href="/equipment/explore"
+              <Link
+                href={item.link}
+                target="_blank"
                 className="mt-6 inline-flex items-center rounded-full bg-cardinal px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#7d0000]"
               >
                 Explore
-              </a>
+              </Link>
             </article>
           ))}
         </div>

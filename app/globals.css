@@ -44,4 +44,13 @@ a {
   .surface-card {
     @apply rounded-3xl border border-stone-200/80 bg-white shadow-soft transition duration-300;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
