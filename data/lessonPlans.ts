@@ -32,6 +32,20 @@ export function normalizeDisplayText(value: unknown) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
 }
 
+function isTruthyCheckboxValue(value: unknown) {
+  const normalized = normalizeText(value);
+
+  return [
+    "true",
+    "checked",
+    "yes",
+    "1",
+    "completed",
+    "complete",
+    "done"
+  ].includes(normalized);
+}
+
 function toTitleCase(value: string) {
   return value
     .split(/\s+/)
@@ -304,6 +318,10 @@ export function lessonMatchesDuration(lessonDuration: unknown, selectedBucket: u
 export function rowsToLessonPlans(rows: CsvRow[]): LessonPlan[] {
   return rows
     .map((row, index) => {
+      if (!isTruthyCheckboxValue(pickValue(row, ["completed"]))) {
+        return null;
+      }
+
       const id =
         normalizeDisplayText(pickValue(row, ["id"])) ||
         `${normalizeHeader(pickValue(row, ["title"])) || "lesson"}-${index + 1}`;
@@ -331,7 +349,7 @@ export function rowsToLessonPlans(rows: CsvRow[]): LessonPlan[] {
         fileUrl
       };
     })
-    .filter((lesson) => lesson.title || lesson.description);
+    .filter((lesson): lesson is LessonPlan => Boolean(lesson && (lesson.title || lesson.description)));
 }
 
 export function buildGradeLevelOptions(lessons: LessonPlan[]) {
