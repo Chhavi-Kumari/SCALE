@@ -35,7 +35,7 @@ export function Hero() {
               Explore Resources
             </a>
             <a
-              href="#partner-access"
+              href="https://viterbik12.usc.edu/teacherresources/"
               className="inline-flex items-center justify-center rounded-full border border-stone-300 px-6 py-3 text-sm font-semibold text-stone-700 transition hover:border-cardinal hover:text-cardinal"
             >
               Partner Access
