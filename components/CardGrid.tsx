@@ -33,12 +33,6 @@ export function CardGrid() {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cardinal">
             Resource Categories
           </p>
-          <h2 className="section-heading">Structured access to STEM teaching tools</h2>
-          <p className="section-copy">
-            Explore curated categories designed for educators, coordinators, and
-            community partners seeking high-quality instructional content and
-            equipment support.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
