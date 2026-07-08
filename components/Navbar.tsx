@@ -7,7 +7,7 @@ const navigationItems = [
   { name: "Equipment", link: "/equipment" },
   { name: "Articles", link: "/articles" },
   //{ name: "Resources", link: "/resources" },
-  //{ name: "Login", link: "/login" }
+  { name: "Login", link: "https://viterbik12.usc.edu/teacherresources/" }
 ];
 
 export function Navbar() {
