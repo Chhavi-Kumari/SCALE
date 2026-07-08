@@ -1,4 +1,4 @@
-const footerLinks = ["About", "Contact", "Privacy"];
+const footerLinks = ["Contact"];
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
 
         <nav aria-label="Footer links" className="flex flex-wrap gap-4">
           {footerLinks.map((link) => (
-            <a key={link} href="#" className="transition hover:text-cardinal">
+            <a key={link} href="https://viterbik12.usc.edu/contact/" className="transition hover:text-cardinal">
               {link}
             </a>
           ))}
