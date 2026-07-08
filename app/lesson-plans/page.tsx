@@ -120,8 +120,8 @@ export default function LessonPlansPage() {
     <main className="min-h-screen bg-white text-ink">
       <PageHero
         eyebrow="Lesson Plans"
-        title="Classroom-ready plans aligned for easy implementation"
-        description="Browse the lesson plan collection for structured, teacher-friendly materials that support active STEM learning across grade levels."
+        title="Classroom-ready lesson plans"
+        description=" "
       />
 
       <SearchBar
