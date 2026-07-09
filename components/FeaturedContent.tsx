@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { articles } from "@/data/articles";
@@ -84,6 +84,7 @@ function pickRandomUnique<T extends { key: string }>(
 
 export function FeaturedContent() {
   const [lessonPlans, setLessonPlans] = useState<LessonPlan[]>([]);
+  const [featuredCards, setFeaturedCards] = useState<FeaturedCard[]>([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -114,7 +115,7 @@ export function FeaturedContent() {
     };
   }, []);
 
-  const featuredCards = useMemo(() => {
+  useEffect(() => {
     const lessonCards = getRandomLessonPlans(lessonPlans, 2)
       .map(mapLessonToCard)
       .filter((card): card is FeaturedCard => Boolean(card));
@@ -155,7 +156,7 @@ export function FeaturedContent() {
       }
     }
 
-    return selected.slice(0, 6);
+    setFeaturedCards(selected.slice(0, 6));
   }, [lessonPlans]);
 
   return (
