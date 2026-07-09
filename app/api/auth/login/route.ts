@@ -8,6 +8,7 @@ import {
 import { getApprovedUserForLogin } from "@/lib/auth-sheet";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 // Temporary email/password auth backed by the Google Apps Script credential store.
 // This can later be replaced with Google OAuth, Auth0, Microsoft Entra ID,
